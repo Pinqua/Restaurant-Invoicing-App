@@ -39,7 +39,7 @@ const InvoiceDescription = (props) => (
             </Descriptions.Item>
             <Descriptions.Item label="Date">{props.invoice.date}</Descriptions.Item>
             <Descriptions.Item label="Invoice via email">
-                {props.invoice.invoice_via_email}
+                {props.invoice.invoice_via_email?"Yes":"No"}
             </Descriptions.Item>
             <Descriptions.Item label="Note">{props.invoice.note}</Descriptions.Item>
         </Descriptions>
