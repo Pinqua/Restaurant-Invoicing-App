@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Button, Space, Form, Input, InputNumber, DatePicker } from "antd";
+import {
+    Button,
+    Space,
+    Form,
+    Input,
+    InputNumber,
+    Checkbox,
+    DatePicker,
+} from "antd";
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 import { v4 as uuidv4 } from "uuid";
 import { calculatePriceIncludingGST } from "../../../utils/helpers";
@@ -179,7 +187,18 @@ const InvoiceForm = ({ handleFormSubmit, handleCancel }) => {
             <Form.Item label="Note" name="note">
                 <Input />
             </Form.Item>
-
+            <Form.Item
+                label=" "
+                rules={[
+                    {
+                        required: true,
+                    },
+                ]}
+                name="invoice_via_email"
+                valuePropName="checked"
+            >
+                <Checkbox>Send Invoice via email</Checkbox>
+            </Form.Item>
             <Form.Item label=" ">
                 <Button type="primary" htmlType="submit" style={{ marginTop: 20 }}>
                     Submit

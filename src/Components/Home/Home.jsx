@@ -20,7 +20,7 @@ const Home = ({ setInvoices, invoices }) => {
 
     return (
         <div className="home">
-            <h1 className="home__heading">Resturant Invoice App</h1>
+            <h1 className="home__heading">Restaurant Invoicing App</h1>
             <div className="home__create__button">
                 <Button type="primary" onClick={showModal}>
                     + Create Invoice

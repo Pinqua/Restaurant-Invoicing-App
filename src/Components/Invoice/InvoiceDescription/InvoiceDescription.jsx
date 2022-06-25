@@ -1,5 +1,5 @@
 import { Descriptions, Table } from "antd";
-import "./InvoiceDescription.css"
+import "./InvoiceDescription.css";
 const columns = [
     {
         title: "Name",
@@ -38,12 +38,17 @@ const InvoiceDescription = (props) => (
                 {props.invoice.address}
             </Descriptions.Item>
             <Descriptions.Item label="Date">{props.invoice.date}</Descriptions.Item>
+            <Descriptions.Item label="Invoice via email">
+                {props.invoice.invoice_via_email}
+            </Descriptions.Item>
             <Descriptions.Item label="Note">{props.invoice.note}</Descriptions.Item>
         </Descriptions>
         <br />
         <h4>Items</h4>
         <Table columns={columns} dataSource={props.invoice.items} rowKey="id" />
-        <h2 className="invoice__desc__total__price">Total Price : - $ {props.invoice.totalPrice}</h2>
+        <h2 className="invoice__desc__total__price">
+            Total Price : $ {props.invoice.totalPrice}
+        </h2>
     </>
 );
 
